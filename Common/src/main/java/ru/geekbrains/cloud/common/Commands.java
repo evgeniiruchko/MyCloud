@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public abstract class Commands implements Serializable {
     public enum CommandType {
+        REGISTRATION,
         LOGIN,
         AUTH_OK,
         AUTH_FAIL,

@@ -14,7 +14,7 @@ public class MainClient extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
-            Parent reg = FXMLLoader.load(getClass().getResource("/Registration.fxml"));
+            Parent reg = FXMLLoader.load(getClass().getResource("/Authorization.fxml"));
             primaryStage.setTitle("Регистрация");
             primaryStage.setScene(new Scene(reg, 300, 300));
             primaryStage.show();

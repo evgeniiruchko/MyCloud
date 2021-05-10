@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Client</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>16</javafx.version>
+        <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
@@ -17,11 +26,39 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--   <dependency>
+               <groupId>org.openjfx</groupId>
+               <artifactId>javafx-controls</artifactId>
+               <version>${javafx.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.openjfx</groupId>
+               <artifactId>javafx-fxml</artifactId>
+               <version>15.0.1</version>
+           </dependency>
+           <dependency>
+               <groupId>org.openjfx</groupId>
+               <artifactId>javafx-fxml</artifactId>
+               <version>15.0.1</version>
+           </dependency>  -->
     </dependencies>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
+    <build>
+    <!--    <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>HelloFX</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>  -->
+    </build>
 
 </project>

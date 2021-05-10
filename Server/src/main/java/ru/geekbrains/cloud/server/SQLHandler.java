@@ -56,7 +56,7 @@ public class SQLHandler {
             logger.info("Пользователь " + login + " успешно зарегистрирован");
             return true;
         } catch (SQLException e) {
-            logger.warn("Неудачная попытка регимтрации " + login);
+            logger.warn("Неудачная попытка региcтрации " + login);
             return false;
         }
     }

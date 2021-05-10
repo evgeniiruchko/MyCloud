@@ -11,8 +11,8 @@ import java.net.UnknownHostException;
 
 public class Client {
     private static Socket socket;
-    private final String ADDRESS;
-    private final int PORT;
+    private static String ADDRESS;
+    private static int PORT;
     private static ObjectEncoderOutputStream out;
     private static ObjectDecoderInputStream in;
 
@@ -21,9 +21,9 @@ public class Client {
         PORT = port;
     }
 
-    void start() {
+    static void start() {
         try{
-            socket = new Socket(this.ADDRESS, this.PORT);
+            socket = new Socket(ADDRESS, PORT);
             out = new ObjectEncoderOutputStream(socket.getOutputStream());
             in = new ObjectDecoderInputStream(socket.getInputStream(), 50 * 1024 * 1024);
         } catch (UnknownHostException e) {

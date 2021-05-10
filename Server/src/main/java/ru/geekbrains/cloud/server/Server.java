@@ -6,6 +6,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
@@ -34,11 +35,11 @@ public class Server {
                     .channel(NioServerSocketChannel.class)
                     /*Указываем обработчик, который будем использовать для открытого канала (Channel).
                     ChannelInitializer помогает пользователю сконфигурировать новый канал.*/
-                    .childHandler(new ChannelInitializer<NioServerSocketChannel>() {
+                    .childHandler(new ChannelInitializer<NioSocketChannel>() {
                         //обработка сообщений
                         // для входящих - сверху вниз, для исходящих снизу вверх
                         @Override
-                        protected void initChannel(NioServerSocketChannel nioServerSocketChannel) {
+                        protected void initChannel(NioSocketChannel nioServerSocketChannel) {
                             nioServerSocketChannel.pipeline().addLast(
                                     //десериализатор netty входящего потока байтов в объект сообщения
                                     new ObjectDecoder(50 * 1024 * 1024, ClassResolvers.cacheDisabled(null)),
