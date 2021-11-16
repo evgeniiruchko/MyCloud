@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox       fx:id="regWindow"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ru.geekbrains.cloud.client.RegistrationController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <Label alignment="CENTER" textAlignment="CENTER" text="РЕГИСТРАЦИЯ" />
+    <HBox>
+        <Label text="Логин" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="regLoginField" promptText="введите логин" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox>
+        <Label text="Пароль" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="regPassField" promptText="введите пароль" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox>
+        <Label text="Повторите пароль" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="regPassFieldConfirm" promptText="повторите пароль" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox>
+        <Button text = "Зарегистрироваться" fx:id="btnReg" onAction="#Registration"></Button>
+    </HBox>
+
+</VBox>
